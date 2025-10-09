@@ -3,5 +3,9 @@
         "iostream": "cpp",
         "cmath": "cpp",
         "ostream": "cpp"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && powershell -ExecutionPolicy Bypass -File ..\\run.ps1 $fileName"
     }
 }
