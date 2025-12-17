@@ -12,22 +12,57 @@ int main()
     {
         int n, x;
         cin >> n >> x;
+        int m1 = 0, m2 = 0, m3 = 0;
+        bool flag = false;
 
-        vector<long long> first_stack(n);
+        vector<long long> first_stack;
         for (int i = 0; i < n; i++)
         {
-            cin >> first_stack[i];
+            int y = 0;
+            cin >> y;
+            if ((y|x) > x)
+            {
+                flag = true;
+            }
+            if (!flag)
+            {
+                m1 = (m1 | y);
+            }
+            
         }
-        vector<long long> second_stack(n);
+        flag = false;
+        
+        vector<long long> second_stack;
         for (int i = 0; i < n; i++) 
         {
-            cin >> second_stack[i];
+            int y = 0;
+            cin >> y;
+
+            if ((y|x) > x)
+            {
+                flag = true;
+            }
+            if (!flag)
+            {
+                m2 = (m2 | y);
+            }        
         }   
 
-        vector<long long> third_stack(n);
+        flag = false;
+
+        vector<long long> third_stack;
         for (int i = 0; i < n; i++)             
         {
-            cin >> third_stack[i];
+            int y = 0;
+            cin >> y;
+            if ((y|x) > x)
+            {
+                flag = true;
+            }
+            if (!flag)
+            {
+                m3 = (m3 | y);
+            }
         }
 
         if (x == 0)
@@ -36,7 +71,17 @@ int main()
             continue;
         }
 
+        
+        int m = (m1 | m2 | m3);
 
+        if (m == x)
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
         
 
 
