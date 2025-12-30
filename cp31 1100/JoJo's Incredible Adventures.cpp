@@ -13,11 +13,12 @@ int main() {
         string s;
         cin >> s;   
 
-        int n = s.size();
+        long long n = s.size();
         s += s;
-        int max_1 = 0;
-        int longest_1 = 1;
-        int maxxx_1 =0;
+        long long max_1 = 0;
+        long long longest_1 = 1;
+        long long maxxx_1 = 0;
+        
         for (int i = 0; i < 2*n; i++)
         {
             if (s[i] =='1')
@@ -48,10 +49,10 @@ int main() {
         }
         if (max_1 == 2*n)
         {
-            cout << n << '\n';
+            cout << n*n << '\n';
             continue;
         }
-        int area = (maxxx_1 + 1)/2 ;
+        long long area = (maxxx_1 + 1)/2 ;
 
     cout << area*((maxxx_1 + 2)/2) << '\n';
 
